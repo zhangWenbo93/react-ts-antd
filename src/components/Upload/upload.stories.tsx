@@ -27,7 +27,7 @@ const filePromise = (file: File) => {
 const SimpleUpload = () => {
 	return (
 		<Upload
-			action="https://run.mocky.io/v3/4abfbf28-0afc-45f1-b8ae-219f82fe51d8"
+			action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
 			defaultFileList={defaultFileList}
 			onChange={action('change')}
 			beforeUpload={filePromise}
