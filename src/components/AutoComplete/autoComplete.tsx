@@ -49,6 +49,7 @@ export const AutoComplete: FC<AutoCompleteProps> = props => {
 	useEffect(
 		() => {
 			if (debounceValue && triggerSearch.current) {
+				setSuggestions([]);
 				const result = fetchSuggestions(debounceValue);
 				if (result instanceof Promise) {
 					setLoading(true);
@@ -71,7 +72,7 @@ export const AutoComplete: FC<AutoCompleteProps> = props => {
 			}
 			setHighlightIndex(-1);
 		},
-		[fetchSuggestions, debounceValue]
+		[debounceValue, fetchSuggestions]
 	);
 
 	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -114,6 +115,7 @@ export const AutoComplete: FC<AutoCompleteProps> = props => {
 		if (onSelect) {
 			onSelect(item.value);
 		}
+		triggerSearch.current = false;
 	};
 
 	const renderTemplate = (item: DataSourceType) => {

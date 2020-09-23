@@ -15,6 +15,7 @@
     "@types/react": "^16.9.46",
     "@types/react-dom": "^16.9.8",
     "@types/react-transition-group": "^4.4.0",
+    "axios": "^0.20.0",
     "classnames": "^2.2.6",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
@@ -61,5 +62,14 @@
     "babel-loader": "^8.1.0",
     "react-docgen-typescript-loader": "^3.7.2",
     "react-is": "^16.13.1"
+  },
+  "proxy": {
+    "/upload": {
+      "target": "http://jsonplaceholder.typicode.com",
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/upload": ""
+      }
+    }
   }
 }

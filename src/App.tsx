@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import Button from './components/Button/button';
 import Menu from './components/Menu/menu';
 import MenuItem from './components/Menu/menuItem';
@@ -6,24 +6,17 @@ import SubMenu from './components/Menu/subMenu';
 import Icon from './components/Icon/icon';
 import Transition from './components/Transition/transition';
 import Input from './components/Input/input';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fas } from '@fortawesome/free-solid-svg-icons';
+import {library} from '@fortawesome/fontawesome-svg-core';
+import {fas} from '@fortawesome/free-solid-svg-icons';
 
 library.add(fas);
 function App() {
-	const menuList = [
-		'菜单一',
-		'菜单二',
-		'菜单三'
-	];
+	const menuList = ['菜单一', '菜单二', '菜单三'];
 
-	const [
-		show,
-		setShow
-	] = useState(false);
+	const [show, setShow] = useState(false);
 
 	return (
-		<div className="App" style={{ padding: '30px' }}>
+		<div className="App" style={{padding: '30px'}}>
 			<header className="App-header">
 				<Icon icon="coffee" theme="danger" size="1x" />
 				<Icon icon="arrow-down" theme="primary" size="1x" />
@@ -81,12 +74,7 @@ function App() {
 					</SubMenu>
 				</Menu>
 				<hr />
-				<Menu
-					mode="vertical"
-					defaultOpenSubMenus={[
-						'3'
-					]}
-				>
+				<Menu mode="vertical" defaultOpenSubMenus={['3']}>
 					{menuList.map((item, index) => {
 						return (
 							<MenuItem key={item} disabled={index === 1 ? true : false}>
@@ -101,10 +89,10 @@ function App() {
 					</SubMenu>
 				</Menu>
 				<hr />
-				<Input style={{ width: '300px' }} disabled value="222" />
-				<Input style={{ width: '300px' }} icon="search" />
-				<Input style={{ width: '300px' }} prepend="http://" />
-				<Input style={{ width: '300px' }} append=".com" />
+				<Input style={{width: '300px'}} disabled value="222" />
+				<Input style={{width: '300px'}} icon="search" />
+				<Input style={{width: '300px'}} prepend="http://" />
+				<Input style={{width: '300px'}} append=".com" />
 			</nav>
 		</div>
 	);
