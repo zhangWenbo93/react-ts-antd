@@ -1,10 +1,26 @@
 {
   "name": "vikiship",
   "version": "0.1.0",
-  "private": true,
+  "description": "",
+  "author": "zhang",
+  "private": false,
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.js",
+  "license": "MIT",
+  "keywords": [
+    "Component",
+    "UI",
+    "React"
+  ],
+  "homepage": "https://github.com/zhangWenbo93/react-ts-antd",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhangWenbo93/react-ts-antd"
+  },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
@@ -36,7 +52,8 @@
     "build-ts": "tsc -p tsconfig.build.json",
     "build-css": "node-sass ./src/styles/index.scss ./dist/index.css",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "prepublish": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"

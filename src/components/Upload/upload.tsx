@@ -54,7 +54,6 @@ export interface UploadProps {
  *
  * ~~~js
  * import { Upload } from 'vikingship'
-import Dragger from './dragger';
  * ~~~
  */
 export const Upload: FC<UploadProps> = props => {
