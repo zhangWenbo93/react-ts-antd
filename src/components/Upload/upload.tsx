@@ -1,7 +1,6 @@
 import React, {FC, useRef, ChangeEvent, useState} from 'react';
 // import classNames from 'classnames';
 import axios from 'axios';
-import Button from '../Button/button';
 import Dragger from './dragger';
 import UploadList from './uploadList';
 
@@ -173,19 +172,17 @@ export const Upload: FC<UploadProps> = props => {
                 }
             })
             .then(res => {
-                console.log(res);
                 uploadFileList(_file, {status: 'success', response: res.data});
                 onSuccess && onSuccess(res.data, _file);
                 onChange && onChange(_file);
             })
             .catch(err => {
-                console.log(err);
                 uploadFileList(_file, {status: 'error', error: err});
                 onError && onError(err, _file);
                 onChange && onChange(_file);
             });
     };
-    console.log(fileList);
+
     return (
         <div className="upload-component">
             <div className="upload-input" style={{display: 'inline-block'}} onClick={handleClick}>
@@ -199,8 +196,8 @@ export const Upload: FC<UploadProps> = props => {
                     accept={accept}
                     multiple={multiple}
                 />
-                <UploadList fileList={fileList} onRemove={handleRemove} />
             </div>
+            <UploadList fileList={fileList} onRemove={handleRemove} />
         </div>
     );
 };

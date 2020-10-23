@@ -2,6 +2,9 @@
   "name": "vikiship",
   "version": "0.1.0",
   "private": true,
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.js",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
@@ -66,14 +69,5 @@
     "react-docgen-typescript-loader": "^3.7.2",
     "react-is": "^16.13.1",
     "rimraf": "^3.0.2"
-  },
-  "proxy": {
-    "/upload": {
-      "target": "http://jsonplaceholder.typicode.com",
-      "changeOrigin": true,
-      "pathRewrite": {
-        "^/upload": ""
-      }
-    }
   }
 }
